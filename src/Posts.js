@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import PostsList from "./PostsList";
 // --------------------------------
 const Posts =()=>{
     const[Posts, setPosts]= useState([
@@ -35,29 +35,7 @@ const Posts =()=>{
         }])
         
      return(
-        <div className="container">
-              
-              <table className="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">title</th>
-      <th scope="col">body</th>
-    </tr>
-  </thead>
-  <tbody>
-  {Posts.map((post)=>(
-    <tr key={post.id}>
-        <th scope="row">{post.id}</th>
-        <td>{post.title}</td>
-        <td>{post.body}</td>
-        </tr>
-  ))}
-  
-  </tbody>
-</table> 
-        </div>
-
+        <PostsList Posts={Posts} name="Ahmed" />
     );
 }
 export default Posts;
